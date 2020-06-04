@@ -28,6 +28,7 @@ class RecipientsController {
     } = await recipient.update(req.body);
 
     return res.json({
+      id,
       name,
       street,
       number,
