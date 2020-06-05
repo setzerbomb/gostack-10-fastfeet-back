@@ -13,7 +13,7 @@ class Delivery extends Model {
         isPickable: {
           type: Sequelize.VIRTUAL,
           get() {
-            return getHours(new Date()) >= 8 && getHours(new Date()) <= 18;
+            return getHours(new Date()) >= 8 && getHours(new Date()) <= 24;
           },
         },
       },

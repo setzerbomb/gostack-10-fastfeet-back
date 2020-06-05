@@ -26,6 +26,10 @@ class DeliveryManController {
 
     const deliveryMan = await DeliveryManRepository.findByPk(id);
 
+    if (!deliveryMan) {
+      return message(res, 400, 'Delivery men not found');
+    }
+
     if (email && email !== deliveryMan.email) {
       if (await DeliveryManRepository.findDeliveryManByEmail(email)) {
         return message(res, 400, 'Delivery man already exists');
