@@ -10,7 +10,7 @@ export default {
       street: Yup.string().required(),
       number: Yup.number().required(),
       complement: Yup.string().required(),
-      state: Yup.string().required(),
+      state: Yup.string().required().max(2),
       city: Yup.string().required(),
       postal_code: Yup.string().required(),
     });
@@ -24,7 +24,7 @@ export default {
       street: Yup.string().required(),
       number: Yup.number().required(),
       complement: Yup.string().required(),
-      state: Yup.string().required(),
+      state: Yup.string().required().max(2),
       city: Yup.string().required(),
       postal_code: Yup.string().required(),
     });

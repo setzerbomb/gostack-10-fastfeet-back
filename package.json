@@ -5,13 +5,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "dev:debug": "nodemon --inspect src/server.js"
+    "dev:debug": "nodemon --inspect src/server.js",
+    "queue": "nodemon src/queue.js"
   },
   "dependencies": {
     "@sentry/node": "5.15.5",
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "date-fns": "^2.0.0-beta.5",
+    "bee-queue": "^1.2.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
@@ -27,6 +29,7 @@
     "yup": "^0.29.0"
   },
   "devDependencies": {
+    "@types/sequelize": "^4.28.9",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.11.0",

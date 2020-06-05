@@ -1,17 +1,33 @@
-import Recipients from '../models/Recipients';
+import Recipient from '../models/Recipient';
 import message from '../common/message';
 
-class RecipientsController {
+class RecipientController {
   async store(req, res) {
-    const recipient = await Recipients.create(req.body);
+    const {
+      name,
+      street,
+      number,
+      complement,
+      state,
+      city,
+      postal_code,
+    } = await Recipient.create(req.body);
 
-    res.json(recipient);
+    res.json({
+      name,
+      street,
+      number,
+      complement,
+      state,
+      city,
+      postal_code,
+    });
   }
 
   async update(req, res) {
     const { id } = req.params;
 
-    const recipient = await Recipients.findByPk(id);
+    const recipient = await Recipient.findByPk(id);
 
     if (!recipient) {
       return message(res, 401, 'Recipient not found');
@@ -40,4 +56,4 @@ class RecipientsController {
   }
 }
 
-export default new RecipientsController();
+export default new RecipientController();

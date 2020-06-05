@@ -23,7 +23,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/runtime@^7.9.6":
+"@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
   integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
@@ -121,15 +121,47 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@types/bluebird@*":
+  version "3.5.32"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.32.tgz#381e7b59e39f010d20bbf7e044e48f5caf1ab620"
+  integrity sha512-dIOxFfI0C+jz89g6lQ+TqhGgPQ0MxSnh/E4xuC0blhFtyW269+mPG5QeLgbdwst/LvdP8o1y0o/Gz5EHXLec/g==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
+"@types/continuation-local-storage@*":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/continuation-local-storage/-/continuation-local-storage-3.2.2.tgz#7cbf177a6206ece87bc4b808784772ad2aa5f6db"
+  integrity sha512-aItm+aYPJ4rT1cHmAxO+OdWjSviQ9iB5UKb5f0Uvgln0N4hS2mcDodHtPiqicYBXViUYhqyBjhA5uyOcT+S34Q==
+  dependencies:
+    "@types/node" "*"
+
+"@types/lodash@*":
+  version "4.14.155"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.155.tgz#e2b4514f46a261fd11542e47519c20ebce7bc23a"
+  integrity sha512-vEcX7S7aPhsBCivxMwAANQburHBtfN9RdyXFk84IJmu2Z4Hkg1tOFgaslRiEqqvoLtbCBi6ika1EMspE+NZ9Lg==
+
 "@types/node@*":
   version "14.0.9"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.9.tgz#43896ab87fc82bda1dfd600cdf44a0c8a64e11d2"
   integrity sha512-0sCTiXKXELOBxvZLN4krQ0FPOAA7ij+6WwvD0k/PHd9/KAkr4dXel5J9fh6F4x1FwAQILqAWkmpeuS6mjf1iKA==
+
+"@types/sequelize@^4.28.9":
+  version "4.28.9"
+  resolved "https://registry.yarnpkg.com/@types/sequelize/-/sequelize-4.28.9.tgz#64d0fad07de2f30ef11003a8c2ef5ac0321de115"
+  integrity sha512-QqYgkw/2fEc0FyEQejnxM7cHKB8XBV3Y69k7GSFOToQBOXos0PJVqNpgROXZddXIkl2d6zicYssHuy75ws84sw==
+  dependencies:
+    "@types/bluebird" "*"
+    "@types/continuation-local-storage" "*"
+    "@types/lodash" "*"
+    "@types/validator" "*"
+
+"@types/validator@*":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@types/validator/-/validator-13.0.0.tgz#365f1bf936aeaddd0856fc41aa1d6f82d88ee5b3"
+  integrity sha512-WAy5txG7aFX8Vw3sloEKp5p/t/Xt8jD3GRD9DacnFv6Vo8ubudAsRTXgxpQwU0mpzY/H8U4db3roDuCMjShBmw==
 
 abbrev@1:
   version "1.1.1"
@@ -305,6 +337,14 @@ bcryptjs@^2.4.3:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
   integrity sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
+
+bee-queue@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/bee-queue/-/bee-queue-1.2.3.tgz#d4839ecdb10d9116e80417bfca38e4bfd20fcc50"
+  integrity sha512-oAvZZi/hrVSCCOIR2A0DP6aWDQz8+oEVRTVO/DDYJHhQ4HmSvKYQeTYUsXwxok+nm6kVUETVnLPDHjcDDp4AVQ==
+  dependencies:
+    promise-callbacks "^3.0.0"
+    redis "^2.7.1"
 
 binary-extensions@^2.0.0:
   version "2.0.0"
@@ -776,6 +816,11 @@ dottie@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/dottie/-/dottie-2.0.2.tgz#cc91c0726ce3a054ebf11c55fbc92a7f266dd154"
   integrity sha512-fmrwR04lsniq/uSr8yikThDTrM7epXHBAAjH9TbeH3rEA8tdCO7mRzB9hdmdGyJCxF8KERo9CITcm3kGuoyMhg==
+
+double-ended-queue@^2.1.0-0:
+  version "2.1.0-0"
+  resolved "https://registry.yarnpkg.com/double-ended-queue/-/double-ended-queue-2.1.0-0.tgz#103d3527fd31528f40188130c841efdd78264e5c"
+  integrity sha1-ED01J/0xUo9AGIEwyEHv3XgmTlw=
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -2265,6 +2310,14 @@ object.entries@^1.1.1:
     es-abstract "^1.17.5"
     has "^1.0.3"
 
+object.getownpropertydescriptors@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/object.getownpropertydescriptors/-/object.getownpropertydescriptors-2.1.0.tgz#369bf1f9592d8ab89d712dced5cb81c7c5352649"
+  integrity sha512-Z53Oah9A3TdLoblT7VKJaTDdXdT+lQO+cNpKVnya5JDe9uLvzu1YyY1yFDFrcxrlRgWrEFH0jJtD/IbuwjcEVg==
+  dependencies:
+    define-properties "^1.1.3"
+    es-abstract "^1.17.0-next.1"
+
 object.values@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/object.values/-/object.values-1.1.1.tgz#68a99ecde356b7e9295a3c5e0ce31dc8c953de5e"
@@ -2572,6 +2625,14 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
+promise-callbacks@^3.0.0:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/promise-callbacks/-/promise-callbacks-3.8.1.tgz#28c9aa11bb7521467f20981c0891adc4b4328438"
+  integrity sha512-5Wutj6C0xlrWQMaavpcTsFHc3BLUBenV7N8eCbRYWxPBU0+I/gYTjhta9qIp7lEETN31c6XqEJwl0cPc358Iyg==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    object.getownpropertydescriptors "2.1.0"
+
 promise@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/promise/-/promise-8.1.0.tgz#697c25c3dfe7435dd79fcd58c38a135888eaf05e"
@@ -2703,6 +2764,25 @@ readdirp@~3.4.0:
   integrity sha512-0xe001vZBnJEK+uKcj8qOhyAKPzIT+gStxWr3LCB0DwcXR5NZJ3IaC+yGnHCYzB/S7ov3m3EEbZI2zeNvX+hGQ==
   dependencies:
     picomatch "^2.2.1"
+
+redis-commands@^1.2.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.5.0.tgz#80d2e20698fe688f227127ff9e5164a7dd17e785"
+  integrity sha512-6KxamqpZ468MeQC3bkWmCB1fp56XL64D4Kf0zJSwDZbVLLm7KFkoIcHrgRvQ+sk8dnhySs7+yBg94yIkAK7aJg==
+
+redis-parser@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/redis-parser/-/redis-parser-2.6.0.tgz#52ed09dacac108f1a631c07e9b69941e7a19504b"
+  integrity sha1-Uu0J2srBCPGmMcB+m2mUHnoZUEs=
+
+redis@^2.7.1:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/redis/-/redis-2.8.0.tgz#202288e3f58c49f6079d97af7a10e1303ae14b02"
+  integrity sha512-M1OkonEQwtRmZv4tEWF2VgpG0JWJ8Fv1PhlgT5+B+uNq2cA3Rt1Yt/ryoR+vQNOQcIEgdCdfH0jr3bDpihAw1A==
+  dependencies:
+    double-ended-queue "^2.1.0-0"
+    redis-commands "^1.2.0"
+    redis-parser "^2.6.0"
 
 regenerator-runtime@^0.13.4:
   version "0.13.5"

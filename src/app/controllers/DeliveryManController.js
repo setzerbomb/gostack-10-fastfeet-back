@@ -1,19 +1,19 @@
-import DeliveryMenRepository from '../repositories/DeliveryMenRepository';
+import DeliveryManRepository from '../repositories/DeliveryManRepository';
 import message from '../common/message';
 
-class DeliveryMenController {
+class DeliveryManController {
   async list(req, res, next) {
-    const deliveryMen = await DeliveryMenRepository.findAll();
+    const deliveryMan = await DeliveryManRepository.findAll();
 
-    res.json(deliveryMen);
+    res.json(deliveryMan);
   }
 
   async store(req, res) {
-    if (await DeliveryMenRepository.findDeliveryMenByEmail(req.body.email)) {
+    if (await DeliveryManRepository.findDeliveryManByEmail(req.body.email)) {
       return message(res, 400, 'Delivery man already exists');
     }
 
-    const { id, name, email, avatar } = await DeliveryMenRepository.create(
+    const { id, name, email, avatar } = await DeliveryManRepository.create(
       req.body
     );
 
@@ -24,10 +24,10 @@ class DeliveryMenController {
     const { id } = req.params;
     const { email } = req.body;
 
-    const deliveryMan = await DeliveryMenRepository.findByPk(id);
+    const deliveryMan = await DeliveryManRepository.findByPk(id);
 
     if (email && email !== deliveryMan.email) {
-      if (await DeliveryMenRepository.findDeliveryMenByEmail(email)) {
+      if (await DeliveryManRepository.findDeliveryManByEmail(email)) {
         return message(res, 400, 'Delivery man already exists');
       }
     }
@@ -40,7 +40,11 @@ class DeliveryMenController {
   async delete(req, res) {
     const { id } = req.params;
 
-    const deliveryMan = await DeliveryMenRepository.findByPk(id);
+    const deliveryMan = await DeliveryManRepository.findByPk(id);
+
+    if (!deliveryMan) {
+      return message(res, 400, 'Delivery men not found');
+    }
 
     deliveryMan.destroy();
 
@@ -48,4 +52,4 @@ class DeliveryMenController {
   }
 }
 
-export default new DeliveryMenController();
+export default new DeliveryManController();
