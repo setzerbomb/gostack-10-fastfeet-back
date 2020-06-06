@@ -9,6 +9,7 @@ import RecipientController from './app/controllers/RecipientController';
 import DeliveryManController from './app/controllers/DeliveryManController';
 import DeliveryController from './app/controllers/DeliveryController';
 import DistributorController from './app/controllers/DistributorController';
+import DeliveryProblemsController from './app/controllers/DeliveryProblemsController';
 
 import DeliveryManDeliveriesHistoryController from './app/controllers/DeliveryManDeliveriesHistoryController';
 import DeliveryManDeliveriesController from './app/controllers/DeliveryManDeliveriesController';
@@ -19,6 +20,7 @@ import RecipientSchemaValidation from './app/middlewares/validation/RecipientSch
 import DeliveryManSchemaValidation from './app/middlewares/validation/DeliveryManSchema';
 import DeliverySchemaValidation from './app/middlewares/validation/DeliverySchema';
 import DeliveryManDeliveriesSchemaValidation from './app/middlewares/validation/DeliveryManDeliverySchemaValidation';
+import DeliveryProblemSchemaValidation from './app/middlewares/validation/DeliveryProblemSchema';
 
 import authMiddleware from './app/middlewares/auth/auth';
 
@@ -53,6 +55,20 @@ routes.put(
   '/deliveries/:id/cancel-delivery',
   GenericSchemaValidation.index,
   DistributorController.update
+);
+
+routes.get('/deliveries/problems', DeliveryProblemsController.list);
+
+routes.get(
+  '/deliveries/:id/problems',
+  GenericSchemaValidation.index,
+  DeliveryProblemsController.index
+);
+
+routes.post(
+  '/deliveries/:id/problems',
+  DeliveryProblemSchemaValidation.store,
+  DeliveryProblemsController.store
 );
 
 routes.use(authMiddleware);

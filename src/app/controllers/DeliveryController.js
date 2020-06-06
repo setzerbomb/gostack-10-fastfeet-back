@@ -10,7 +10,28 @@ import DeliveryMan from '../models/DeliveryMan';
 
 class DeliveryController {
   async list(req, res, next) {
-    const delivery = await Delivery.findAll();
+    const delivery = await Delivery.findAll({
+      include: [
+        {
+          model: Recipient,
+          as: 'recipient',
+          attributes: ['name', 'street', 'number', 'state', 'city'],
+        },
+        {
+          model: DeliveryMan,
+          as: 'deliveryman',
+          attributes: ['name'],
+        },
+      ],
+      attributes: [
+        'id',
+        'product',
+        'isPickable',
+        'start_date',
+        'end_date',
+        'canceled_at',
+      ],
+    });
 
     res.json(delivery);
   }
@@ -59,6 +80,10 @@ class DeliveryController {
     const { id } = req.params;
 
     const delivery = await Delivery.findByPk(id);
+
+    if (!delivery) {
+      return message(res, 400, 'Delivery not found');
+    }
 
     if (req.body.end_date && !(delivery.start_date || req.body.start_date)) {
       return message(

@@ -32,7 +32,6 @@ class DeliveryManDeliveriesController {
 
     const deliveries = await Delivery.findAll({
       where: query,
-      order: ['created_at'],
       attributes: ['id', 'product', 'start_date', 'end_date', 'canceled_at'],
       limit: 10,
       offset: (page - 1) * 10,

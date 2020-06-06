@@ -3,7 +3,7 @@ import Recipient from '../models/Recipient';
 import { Op } from 'sequelize';
 
 class DeliveryManDeliveriesHistoryController {
-  async list(req, res, next) {
+  async list(req, res) {
     const { id } = req.params;
     const { page = 1, filter } = req.query;
 
@@ -21,7 +21,6 @@ class DeliveryManDeliveriesHistoryController {
 
     const deliveries = await Delivery.findAll({
       where: query,
-      order: ['created_at'],
       attributes: ['id', 'product', 'start_date', 'end_date', 'canceled_at'],
       limit: 10,
       offset: (page - 1) * 10,

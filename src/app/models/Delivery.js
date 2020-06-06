@@ -39,6 +39,10 @@ class Delivery extends Model {
       foreignKey: 'recipient_id',
       as: 'recipient',
     });
+    this.hasMany(models.DeliveryProblem, {
+      onDelete: 'cascade',
+      as: 'deliveryProblems',
+    });
   }
 }
 
