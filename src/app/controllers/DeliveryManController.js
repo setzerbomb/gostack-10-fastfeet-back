@@ -52,7 +52,7 @@ class DeliveryManController {
 
     deliveryMan.destroy();
 
-    return message(res, 204, '');
+    return message(res, 204, 'Delivery man deleted', false);
   }
 }
 

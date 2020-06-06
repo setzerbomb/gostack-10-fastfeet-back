@@ -112,7 +112,7 @@ class DeliveryController {
 
     delivery.destroy();
 
-    return message(res, 204, '');
+    return message(res, 204, 'Delivery deleted', false);
   }
 }
 

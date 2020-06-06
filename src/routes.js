@@ -8,6 +8,7 @@ import FileController from './app/controllers/FileController';
 import RecipientController from './app/controllers/RecipientController';
 import DeliveryManController from './app/controllers/DeliveryManController';
 import DeliveryController from './app/controllers/DeliveryController';
+import DistributorController from './app/controllers/DistributorController';
 
 import DeliveryManDeliveriesHistoryController from './app/controllers/DeliveryManDeliveriesHistoryController';
 import DeliveryManDeliveriesController from './app/controllers/DeliveryManDeliveriesController';
@@ -46,6 +47,12 @@ routes.get(
   '/deliveryman/:id/deliveries/history',
   GenericSchemaValidation.index,
   DeliveryManDeliveriesHistoryController.list
+);
+
+routes.put(
+  '/deliveries/:id/cancel-delivery',
+  GenericSchemaValidation.index,
+  DistributorController.update
 );
 
 routes.use(authMiddleware);
